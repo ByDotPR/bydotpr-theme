@@ -1,0 +1,125 @@
+.b-hero {
+  position: relative;
+  min-height: 560px;
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-end;
+  overflow: hidden;
+  color: #fff;
+}
+
+.b-hero__bg {
+  position: absolute;
+  inset: 0;
+  z-index: 0;
+}
+.b-hero__bg picture,
+.b-hero__bg img,
+.b-hero__video {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  display: block;
+}
+.b-hero__overlay {
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(
+    180deg,
+    rgba(17, 17, 17, 0.15) 0%,
+    rgba(17, 17, 17, 0.65) 100%
+  );
+}
+
+.b-hero__inner {
+  position: relative;
+  z-index: 1;
+  max-width: var(--container);
+  width: 100%;
+  margin-inline: auto;
+  padding: var(--space-lg);
+}
+
+.b-hero__title {
+  font-family: var(--font-heading);
+  font-weight: 400;
+  text-transform: uppercase;
+  margin: 0 0 1.5rem;
+  color: #fff;
+  max-width: 680px;
+}
+.b-hero__title span,
+.b-hero__title em {
+  display: block;
+  line-height: 1.15;
+}
+
+.b-hero__title-line1 {
+  font-size: clamp(1.7rem, 3.2vw, 2.6rem);
+}
+.b-hero__title-line2 {
+  font-size: clamp(2rem, 3.8vw, 3.2rem);
+  margin-left: clamp(1.5rem, 4vw, 3.5rem);
+}
+.b-hero__title-accent {
+  font-size: clamp(1.4rem, 2.6vw, 2.1rem);
+  font-style: italic;
+  text-transform: none;
+  color: var(--color-accent);
+  margin-left: 0;
+}
+
+/* Párrafo y CTA en la misma fila, alineados entre sí */
+.b-hero__bottom-row {
+  display: flex;
+  align-items: flex-end;
+  justify-content: space-between;
+  gap: var(--space-md);
+  flex-wrap: wrap;
+}
+
+.b-hero__subtitle {
+  font-family: var(--font-sans);
+  font-size: 0.95rem;
+  max-width: 42ch;
+  color: rgba(255, 255, 255, 0.85);
+  margin: 0;
+}
+
+.b-hero__cta {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  height: 40px;
+  padding: 0 1.4rem;
+  border: 1.5px solid #fff;
+  border-radius: 999px;
+  color: #fff;
+  text-decoration: none;
+  font-size: 0.85rem;
+  font-family: var(--font-sans);
+  white-space: nowrap;
+  transition:
+    background 0.15s ease,
+    color 0.15s ease;
+}
+.b-hero__cta:hover {
+  background: #fff;
+  color: var(--color-ink);
+}
+
+@media (max-width: 640px) {
+  .b-hero {
+    min-height: 460px;
+  }
+  .b-hero__inner {
+    padding: var(--space-md);
+  }
+  .b-hero__title-line2 {
+    margin-left: 1rem;
+  }
+  .b-hero__bottom-row {
+    flex-direction: column;
+    align-items: flex-start;
+  }
+}

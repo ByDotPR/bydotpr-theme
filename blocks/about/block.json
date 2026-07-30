@@ -1,0 +1,15 @@
+{
+  "name": "acf/about",
+  "title": "About (párrafo 360°)",
+  "description": "Párrafo institucional centrado, con versión corta para mobile.",
+  "category": "bydotpr",
+  "icon": "editor-alignleft",
+  "acf": { "mode": "render", "renderTemplate": "block-about.php" },
+  "supports": {
+    "align": false,
+    "mode": false,
+    "jsx": false,
+    "html": false,
+    "anchor": true
+  }
+}

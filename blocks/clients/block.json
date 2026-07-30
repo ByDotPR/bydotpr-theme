@@ -1,0 +1,9 @@
+{
+  "name": "acf/clients",
+  "title": "Barra de clientes",
+  "description": "Grid/carrusel de logos de clientes (14).",
+  "category": "bydotpr",
+  "icon": "grid-view",
+  "acf": { "mode": "render", "renderTemplate": "block-clients.php" },
+  "supports": { "align": false, "mode": false, "jsx": false, "html": false }
+}

@@ -1,0 +1,15 @@
+{
+  "name": "acf/contact-form",
+  "title": "Formulario de contacto",
+  "description": "Formulario liviano con handler AJAX propio (sin plugin de formularios).",
+  "category": "bydotpr",
+  "icon": "email",
+  "acf": { "mode": "render", "renderTemplate": "block-contact-form.php" },
+  "supports": {
+    "align": false,
+    "mode": false,
+    "jsx": false,
+    "html": false,
+    "anchor": true
+  }
+}

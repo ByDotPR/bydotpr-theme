@@ -1,0 +1,44 @@
+.b-clients {
+  padding: var(--space-lg) 0 0;
+}
+.b-clients__track {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: var(--space-lg) var(--space-md);
+  align-items: center;
+  padding-bottom: var(--space-lg);
+}
+.b-clients__item img {
+  width: 100%;
+  height: auto;
+  max-height: 56px;
+  object-fit: contain;
+}
+
+/* Línea inferior — mismo patrón que .b-why__line (90% ancho, centrada, altura ajustable) */
+.b-clients__line {
+  width: 90%;
+  max-width: var(--container);
+  margin: 0 auto;
+  background: var(--color-border);
+}
+
+@media (max-width: 640px) {
+  .b-clients__track {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+@media (max-width: 480px) {
+  .b-clients__track {
+    display: flex;
+    overflow-x: auto;
+    scroll-snap-type: x mandatory;
+    gap: var(--space-sm);
+    padding-bottom: var(--space-md);
+  }
+  .b-clients__item {
+    flex: 0 0 100px;
+    scroll-snap-align: start;
+  }
+}

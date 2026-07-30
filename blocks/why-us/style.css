@@ -1,0 +1,124 @@
+.b-why {
+  padding: var(--space-xl) 0;
+  position: relative;
+}
+
+.b-why__line {
+  width: 90%;
+  max-width: var(--container);
+  margin: 0 auto;
+  background: var(--color-border);
+}
+.b-why__line--top {
+  margin-bottom: var(--space-lg);
+}
+.b-why__line--bottom {
+  margin-top: var(--space-lg);
+}
+
+/* Título centrado, tamaño controlado por inline style desde ACF */
+.b-why__title {
+  font-family: var(--font-heading);
+  font-weight: 400;
+  margin: 0 0 var(--space-md);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 0.75rem;
+  text-align: center;
+}
+
+/* Wrapper SIN overflow:hidden — el adorno puede salirse/subir libremente aquí */
+.b-why__visual-wrap {
+  position: relative;
+}
+
+/* El overflow:hidden queda SOLO en .b-why__visual, para que la letra "DOT" no
+   se salga de su caja — el adorno ya no vive adentro de este contenedor. */
+.b-why__visual {
+  position: relative;
+  min-height: 680px;
+  display: flex;
+  align-items: flex-start;
+  justify-content: center;
+  overflow: hidden;
+}
+.b-why__bg {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  max-width: 90%;
+  height: auto;
+  z-index: 0;
+}
+/* Ahora es hijo de .b-why__visual-wrap (sin recorte), top/left son % de ESE wrapper */
+.b-why__accent {
+  position: absolute;
+  transform: translate(-50%, -50%);
+  z-index: 3;
+  height: auto;
+  width: var(--accent-w);
+  top: var(--accent-top);
+  left: var(--accent-left);
+}
+/* Difuminado en los 4 bordes. Variables para ajustar sin pelear con la sintaxis:
+   --fade-w / --fade-h = tamaño del óvalo "sólido" antes de empezar a desvanecer
+   (más chico = más difuminado se ve). --fade-start = dónde empieza el fade,
+   --fade-end = dónde termina totalmente transparente. */
+.b-why__person {
+  position: relative;
+  z-index: 2;
+  max-height: 640px;
+  width: auto;
+  margin: 0 auto;
+  display: block;
+
+  --fade-w: 55%;
+  --fade-h: 60%;
+  --fade-pos: 50% 38%;
+  --fade-start: 30%;
+  --fade-end: 100%;
+
+  -webkit-mask-image: radial-gradient(
+    ellipse var(--fade-w) var(--fade-h) at var(--fade-pos),
+    #000 var(--fade-start),
+    transparent var(--fade-end)
+  );
+  mask-image: radial-gradient(
+    ellipse var(--fade-w) var(--fade-h) at var(--fade-pos),
+    #000 var(--fade-start),
+    transparent var(--fade-end)
+  );
+}
+
+.b-why__columns {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+  gap: var(--space-lg);
+  margin-top: var(--space-lg);
+}
+.b-why__column-text {
+  font-family: var(--font-sans);
+  font-size: 0.9rem;
+  line-height: 1.7;
+  color: var(--color-muted);
+  margin: 0;
+}
+
+@media (max-width: 640px) {
+  .b-why__visual {
+    min-height: 320px;
+  }
+  .b-why__person {
+    max-height: 320px;
+  }
+  .b-why__columns {
+    grid-template-columns: 1fr;
+  }
+  .b-why__accent {
+    width: var(--accent-w-m);
+    top: var(--accent-top-m);
+    left: var(--accent-left-m);
+  }
+}

@@ -1,0 +1,122 @@
+.b-about {
+  position: relative;
+  overflow: hidden;
+  max-width: var(--container);
+  margin: 0 auto;
+  padding: 9rem 0 2rem;
+}
+
+.b-about__watermark {
+  position: absolute;
+  left: 340px;
+  top: 40px;
+  font-family: var(--font-heading);
+  font-weight: 400;
+  font-size: 46rem;
+  line-height: 1;
+  color: rgba(17, 17, 17, 0.12);
+  z-index: 0;
+  pointer-events: none;
+  user-select: none;
+}
+
+.b-about__inner {
+  position: relative;
+  z-index: 1;
+  padding-left: 6.25rem;
+}
+
+.b-about__prefix {
+  font-family: var(--font-heading);
+  font-size: 3.5rem;
+  color: var(--color-ink);
+  margin: 0;
+  line-height: 1.1;
+}
+
+/* Número y tagline comparten fila, pegados por abajo — el tagline "cuelga"
+   justo del borde inferior del "360°", no es una línea aparte. */
+.b-about__number-row {
+  display: flex;
+  align-items: flex-end;
+  flex-wrap: wrap;
+  gap: 0.6rem;
+  margin: 0 0 1.5rem;
+}
+.b-about__number {
+  font-family: var(--font-heading);
+  font-size: 13rem;
+  line-height: 1;
+  color: var(--color-accent);
+}
+.b-about__tagline {
+  font-family: var(--font-heading);
+  font-style: italic;
+  font-size: 2.75rem;
+  color: var(--color-ink);
+  padding-bottom: 4rem; /* lo sube un poco para que no quede pegado a la línea base exacta */
+  margin-left: -80px;
+}
+
+.b-about__text {
+  font-family: var(--font-sans);
+  font-size: 1.125rem;
+  line-height: 1.75;
+  color: var(--color-ink);
+  max-width: 900px;
+  margin-left: 20rem;
+}
+.b-about__text--mobile {
+  display: none;
+}
+
+@media (max-width: 1024px) {
+  .b-about__watermark {
+    font-size: 28rem;
+    left: 50%;
+    top: 20px;
+    transform: translateX(-50%);
+  }
+  .b-about__number-row {
+    align-items: baseline;
+  }
+  .b-about__text {
+    margin-left: 0;
+    max-width: 100%;
+  }
+
+  .b-about__tagline {
+    margin-left: 0px;
+    padding-bottom: 0.5rem; /* lo sube un poco para que no quede pegado a la línea base exacta */
+  }
+}
+
+@media (max-width: 640px) {
+  .b-about {
+    padding: 6rem 0 3rem;
+  }
+  .b-about__inner {
+    padding-left: 1.5rem;
+    padding-right: 1.5rem;
+  }
+  .b-about__watermark {
+    font-size: 16rem;
+  }
+  .b-about__prefix {
+    font-size: 2rem;
+  }
+  .b-about__number {
+    font-size: 6rem;
+  }
+  .b-about__tagline {
+    font-size: 1.8rem;
+    margin-left: auto;
+    padding-bottom: 0.5rem; /* lo sube un poco para que no quede pegado a la línea base exacta */
+  }
+  .b-about__text--full {
+    display: none;
+  }
+  .b-about__text--mobile {
+    display: block;
+  }
+}

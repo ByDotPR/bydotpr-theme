@@ -1,0 +1,92 @@
+.b-contact {
+  max-width: var(--container);
+  margin: 0 auto;
+  padding: var(--space-xl) var(--space-lg);
+  display: flex;
+  justify-content: center;
+}
+
+.b-contact__form-col {
+  width: 33%;
+  min-width: 320px; /* evita que el form quede ilegible en pantallas medianas */
+  text-align: center;
+}
+.b-contact__title {
+  font-family: var(--font-heading);
+  font-weight: 400;
+  font-size: clamp(1.6rem, 2.6vw, 2.2rem);
+  margin: 0 0 var(--space-md);
+}
+.b-contact__missing {
+  font-family: var(--font-sans);
+  font-size: 0.85rem;
+  color: var(--color-muted);
+  border: 1px dashed var(--color-border);
+  padding: var(--space-md);
+}
+
+/* Estilos base para el markup que genera CF7 */
+.b-contact__cf7 {
+  text-align: left;
+}
+.b-contact__cf7 .form-row {
+  margin-bottom: 1.1rem;
+}
+.b-contact__cf7 .form-row label {
+  display: block;
+  font-family: var(--font-sans);
+  font-size: 0.8rem;
+  color: var(--color-muted);
+  margin-bottom: 0.35rem;
+}
+.b-contact__cf7 .wpcf7-form-control-wrap {
+  display: block;
+}
+.b-contact__cf7 br {
+  display: none;
+}
+
+.b-contact__cf7 input[type="text"],
+.b-contact__cf7 input[type="email"],
+.b-contact__cf7 input[type="tel"],
+.b-contact__cf7 textarea {
+  width: 100%;
+  border: 1px solid var(--color-border);
+  padding: 0.6rem 0.75rem;
+  font-family: var(--font-sans);
+  font-size: 0.9rem;
+  background: #fff;
+  color: var(--color-ink);
+}
+.b-contact__cf7 textarea {
+  min-height: 120px;
+  resize: vertical;
+}
+.b-contact__cf7 input[type="submit"] {
+  height: 44px;
+  padding: 0 1.5rem;
+  background: var(--color-ink);
+  color: var(--color-bg);
+  border: none;
+  font-family: var(--font-sans);
+  font-weight: 600;
+  cursor: pointer;
+}
+.b-contact__cf7 .wpcf7-not-valid-tip {
+  font-size: 0.75rem;
+  color: #b3261e;
+  margin-top: 0.25rem;
+}
+.b-contact__cf7 .wpcf7-response-output {
+  font-family: var(--font-sans);
+  font-size: 0.85rem;
+  border-radius: 0;
+  margin-top: 1rem;
+}
+
+@media (max-width: 900px) {
+  .b-contact__form-col {
+    width: 100%;
+    min-width: 0;
+  }
+}

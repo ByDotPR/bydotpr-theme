@@ -1,0 +1,116 @@
+.b-services {
+  padding: var(--space-xl) 0;
+}
+
+.b-services__head {
+  margin: 0 auto var(--space-lg);
+}
+.b-services__title {
+  font-family: var(--font-heading);
+  font-weight: 400;
+  font-size: clamp(1.6rem, 2.6vw, 2.2rem);
+  margin: 0;
+}
+
+/* Full-bleed: rompe el max-width del contenedor padre y ocupa todo el viewport */
+.b-services__slider {
+  position: relative;
+  width: 100%;
+  margin-left: calc(50% - 50vw);
+  margin-right: calc(50% - 50vw);
+}
+
+/* Flechas flotando DENTRO de las imágenes: solo el ícono, sin círculo ni borde */
+.b-services__arrow {
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  z-index: 2;
+  width: 48px;
+  height: 48px;
+  border: none;
+  background: transparent;
+  color: rgba(255, 255, 255, 0.85);
+  font-size: 8rem;
+  line-height: 1;
+  cursor: pointer;
+  filter: drop-shadow(0 1px 3px rgba(0, 0, 0, 0.5));
+  transition: color 0.15s ease;
+}
+.b-services__arrow:hover,
+.b-services__arrow.is-active {
+  color: #fff;
+}
+.b-services__arrow--prev {
+  left: 0.5rem;
+}
+.b-services__arrow--next {
+  right: 0.5rem;
+}
+
+/* Track: sin gap, tarjetas pegadas entre sí, sin espacio */
+.b-services__track {
+  display: flex;
+  gap: 0;
+  overflow-x: auto;
+  scroll-snap-type: x mandatory;
+  scroll-behavior: smooth;
+  -webkit-overflow-scrolling: touch;
+  scrollbar-width: none;
+}
+.b-services__track::-webkit-scrollbar {
+  display: none;
+}
+
+/* Tarjeta: tamaño exacto medido en Figma (485.16 x 703.33), se achica en pantallas angostas */
+.b-services__card {
+  scroll-snap-align: start;
+  flex: 0 0 min(485.16px, 85vw);
+  aspect-ratio: 485.16 / 703.33;
+  position: relative;
+  overflow: hidden;
+  display: block;
+  text-decoration: none;
+  color: inherit;
+}
+.b-services__image {
+  position: absolute;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+/* Mismo tratamiento de oscurecimiento que el hero: tinte parejo + más fuerte abajo */
+.b-services__overlay {
+  position: absolute;
+  inset: 0;
+  /* background: linear-gradient(
+    180deg,
+    rgba(17, 17, 17, 0.25) 0%,
+    rgba(17, 17, 17, 0.75) 100%
+  ); */
+}
+.b-services__card-title {
+  position: absolute;
+  left: 1.5rem;
+  right: 1.5rem;
+  bottom: 1.75rem;
+  z-index: 1;
+  margin: 0;
+  color: #fff;
+  text-align: center;
+  text-transform: uppercase;
+  font-family: var(--font-sans);
+  font-weight: 400;
+  font-size: 0.95rem;
+  letter-spacing: 0.12em;
+  line-height: 1.5;
+}
+
+@media (max-width: 640px) {
+  .b-services__arrow {
+    width: 36px;
+    height: 36px;
+    font-size: 1.8rem;
+  }
+}

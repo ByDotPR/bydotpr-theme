@@ -1,0 +1,9 @@
+{
+  "name": "acf/why-us",
+  "title": "Por qué nosotros",
+  "description": "3 bullets con ícono y texto corto.",
+  "category": "bydotpr",
+  "icon": "star-filled",
+  "acf": { "mode": "render", "renderTemplate": "block-why-us.php" },
+  "supports": { "align": false, "mode": false, "jsx": false, "html": false }
+}

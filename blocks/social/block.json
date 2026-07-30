@@ -1,0 +1,9 @@
+{
+  "name": "acf/social",
+  "title": "RRSS",
+  "description": "Enlaces a redes sociales con íconos SVG inline.",
+  "category": "bydotpr",
+  "icon": "share",
+  "acf": { "mode": "render", "renderTemplate": "block-social.php" },
+  "supports": { "align": false, "mode": false, "jsx": false, "html": false }
+}

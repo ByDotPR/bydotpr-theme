@@ -1,0 +1,15 @@
+{
+  "name": "acf/services",
+  "title": "Servicios",
+  "description": "Grid de servicios con ícono, imagen, título y descripción.",
+  "category": "bydotpr",
+  "icon": "layout",
+  "acf": { "mode": "render", "renderTemplate": "block-services.php" },
+  "supports": {
+    "align": false,
+    "mode": false,
+    "jsx": false,
+    "html": false,
+    "anchor": true
+  }
+}
