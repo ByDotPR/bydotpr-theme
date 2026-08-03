@@ -10,7 +10,7 @@ use YahnisElsts\PluginUpdateChecker\v5\PucFactory;
 add_action( 'init', function () {
 
 	$update_checker = PucFactory::buildUpdateChecker(
-		'https://github.com/TU-USUARIO-O-ORG/bydotpr-theme/', // <-- CAMBIA esto por la URL real
+		'https://github.com/ByDotPR/bydotpr-theme',
 		BYDOTPR_DIR . '/style.css',
 		'bydotpr' // debe coincidir con el nombre de la carpeta del theme
 	);

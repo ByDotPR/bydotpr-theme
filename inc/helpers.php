@@ -36,3 +36,42 @@ function bydotpr_social_platforms() {
 		'phone'     => 'Teléfono',
 	);
 }
+
+/**
+ * Tiempo de lectura estimado (sin plugin), ~200 palabras por minuto.
+ */
+function bydotpr_reading_time( $post_id = null ) {
+	$post_id = $post_id ?: get_the_ID();
+	$content = get_post_field( 'post_content', $post_id );
+	$words   = str_word_count( wp_strip_all_tags( $content ) );
+	$minutes = max( 1, (int) ceil( $words / 200 ) );
+	return $minutes;
+}
+
+/**
+ * Tarjeta de blog reutilizable — usada por el bloque "Últimos blogs" (home)
+ * Y por el archivo del blog (archive.php), para no duplicar el markup.
+ */
+function bydotpr_blog_card() {
+	?>
+	<article class="blog-card">
+		<a class="blog-card__link" href="<?php the_permalink(); ?>">
+			<?php if ( has_post_thumbnail() ) : ?>
+				<div class="blog-card__image-wrap">
+					<?php echo get_the_post_thumbnail( get_the_ID(), 'blog-card', array(
+						'class'    => 'blog-card__image',
+						'loading'  => 'lazy',
+						'decoding' => 'async',
+					) ); ?>
+				</div>
+			<?php endif; ?>
+
+			<p class="blog-card__date">
+				<?php echo esc_html( get_the_date() ); ?> · <?php echo esc_html( bydotpr_reading_time() ); ?> min
+			</p>
+			<h3 class="blog-card__title"><?php the_title(); ?></h3>
+			<p class="blog-card__excerpt"><?php echo esc_html( wp_trim_words( get_the_excerpt(), 20 ) ); ?></p>
+		</a>
+	</article>
+	<?php
+}

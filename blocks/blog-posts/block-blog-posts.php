@@ -5,6 +5,7 @@
  * plugin extra) + botón "Ver más" hacia el archivo del blog.
  */
 bydotpr_enqueue_block_asset( 'blog-posts' );
+wp_enqueue_style( 'bydotpr-blog-card', BYDOTPR_URI . '/assets/css/blog-card.css', array( 'bydotpr-main' ), BYDOTPR_VERSION );bydotpr_enqueue_block_asset( 'blog-posts' );
 
 $title       = get_field( 'blog_posts_title' );
 $button_text = get_field( 'blog_posts_button_text' ) ?: 'View More';
@@ -40,23 +41,7 @@ if ( ! $query->have_posts() ) {
 
 	<div class="b-blog__grid">
 		<?php while ( $query->have_posts() ) : $query->the_post(); ?>
-			<article class="b-blog__card">
-				<a class="b-blog__card-link" href="<?php the_permalink(); ?>">
-					<?php if ( has_post_thumbnail() ) : ?>
-						<div class="b-blog__image-wrap">
-							<?php echo get_the_post_thumbnail( get_the_ID(), 'blog-card', array(
-								'class'   => 'b-blog__image',
-								'loading' => 'lazy',
-								'decoding'=> 'async',
-							) ); ?>
-						</div>
-					<?php endif; ?>
-
-					<p class="b-blog__date"><?php echo esc_html( get_the_date() ); ?></p>
-					<h3 class="b-blog__card-title"><?php the_title(); ?></h3>
-					<p class="b-blog__excerpt"><?php echo esc_html( wp_trim_words( get_the_excerpt(), 20 ) ); ?></p>
-				</a>
-			</article>
+			<?php bydotpr_blog_card(); ?>
 		<?php endwhile; wp_reset_postdata(); ?>
 	</div>
 

@@ -1,0 +1,145 @@
+/* Barra de progreso de lectura */
+.blog-progress {
+  position: sticky;
+  top: 0;
+  z-index: 20;
+  height: 3px;
+  background: var(--color-border);
+}
+.blog-progress__bar {
+  height: 100%;
+  width: 0%;
+  background: var(--color-accent);
+  transition: width 0.1s linear;
+}
+
+.blog-single__hero {
+  position: relative;
+  min-height: 420px;
+  display: flex;
+  align-items: flex-end;
+  overflow: hidden;
+}
+.blog-single__hero-image {
+  position: absolute;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+.blog-single__hero-overlay {
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(
+    180deg,
+    rgba(17, 17, 17, 0.1) 0%,
+    rgba(17, 17, 17, 0.7) 100%
+  );
+}
+.blog-single__hero-copy {
+  position: relative;
+  z-index: 1;
+  padding-bottom: var(--space-lg);
+  color: #fff;
+}
+.blog-single__date {
+  font-family: var(--font-sans);
+  font-size: 0.8rem;
+  text-transform: uppercase;
+  letter-spacing: 0.06em;
+  color: var(--color-accent);
+  margin: 0 0 0.5rem;
+}
+.blog-single__title {
+  font-family: var(--font-heading);
+  font-weight: 400;
+  font-size: clamp(2rem, 4vw, 3.2rem);
+  line-height: 1.15;
+  margin: 0;
+  max-width: 900px;
+}
+.blog-single__head {
+  padding: var(--space-xl) var(--space-lg) var(--space-md);
+}
+.blog-single__title--no-image {
+  color: var(--color-ink);
+}
+
+.blog-single__content {
+  max-width: 720px;
+  padding: var(--space-xl) var(--space-lg);
+  font-family: var(--font-sans);
+  font-size: 1.05rem;
+  line-height: 1.8;
+  color: var(--color-ink);
+}
+.blog-single__content p {
+  margin: 0 0 1.4rem;
+}
+.blog-single__content h2,
+.blog-single__content h3 {
+  font-family: var(--font-heading);
+  font-weight: 400;
+  margin: 2rem 0 1rem;
+}
+.blog-single__content img {
+  width: 100%;
+  height: auto;
+  margin: 1.5rem 0;
+}
+.blog-single__content a {
+  color: var(--color-ink);
+  text-decoration-color: var(--color-accent);
+}
+.blog-single__content blockquote {
+  border-left: 2px solid var(--color-accent);
+  margin: 1.5rem 0;
+  padding-left: 1.25rem;
+  font-style: italic;
+  color: var(--color-muted);
+}
+
+/* Drop cap editorial — igual filosofía visual que la watermark del About,
+   pero funcional (letra capital real de lectura), sin JS. */
+.blog-single__content > p:first-of-type::first-letter {
+  font-family: var(--font-heading);
+  font-size: 4.5rem;
+  line-height: 0.8;
+  float: left;
+  padding-right: 0.6rem;
+  padding-top: 0.4rem;
+  color: var(--color-accent);
+}
+
+.blog-related {
+  padding: var(--space-xl) var(--space-lg);
+  border-top: 1px solid var(--color-border);
+}
+.blog-related__title {
+  font-family: var(--font-heading);
+  font-weight: 400;
+  font-size: clamp(1.5rem, 2.4vw, 2rem);
+  margin: 0 0 var(--space-lg);
+}
+.blog-related__grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: var(--space-lg);
+}
+
+@media (max-width: 900px) {
+  .blog-related__grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+@media (max-width: 640px) {
+  .blog-single__hero {
+    min-height: 320px;
+  }
+  .blog-related__grid {
+    grid-template-columns: 1fr;
+  }
+  .blog-single__content {
+    font-size: 1rem;
+  }
+}
