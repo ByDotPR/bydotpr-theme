@@ -8,7 +8,7 @@ if ( ! defined( 'ABSPATH' ) ) {
 	exit;
 }
 
-define( 'BYDOTPR_VERSION', '1.0.0' );
+define( 'BYDOTPR_VERSION', '1.1.0' );
 define( 'BYDOTPR_DIR', get_template_directory() );
 define( 'BYDOTPR_URI', get_template_directory_uri() );
 

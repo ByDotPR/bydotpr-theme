@@ -511,4 +511,34 @@ add_action( 'acf/init', function () {
 		'location' => array( array( array( 'param' => 'options_page', 'operator' => '==', 'value' => 'ajustes-footer' ) ) ),
 	) );
 
+	/* ---------------- BLOG POSTS ---------------- */
+	acf_add_local_field_group( array(
+		'key'    => 'group_blog_posts',
+		'title'  => 'Bloque: Últimos blogs',
+		'fields' => array(
+			array(
+				'key'   => 'field_blog_posts_title',
+				'label' => 'Título de sección',
+				'name'  => 'blog_posts_title',
+				'type'  => 'text',
+				'default_value' => 'From the blog',
+			),
+			array(
+				'key'   => 'field_blog_posts_button_text',
+				'label' => 'Texto del botón',
+				'name'  => 'blog_posts_button_text',
+				'type'  => 'text',
+				'default_value' => 'View More',
+			),
+			array(
+				'key'   => 'field_blog_posts_button_link',
+				'label' => 'Link del botón (opcional)',
+				'name'  => 'blog_posts_button_link',
+				'type'  => 'url',
+				'instructions' => 'Si se deja vacío, usa automáticamente la página de blog configurada en Ajustes > Lectura.',
+			),
+		),
+		'location' => array( array( array( 'param' => 'block', 'operator' => '==', 'value' => 'acf/blog-posts' ) ) ),
+	) );
+
 } );

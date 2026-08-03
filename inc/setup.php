@@ -26,6 +26,7 @@ add_action( 'after_setup_theme', function () {
 	add_image_size( 'hero-tablet', 700, 420, true );
 	add_image_size( 'hero-mobile', 375, 220, true );
 	add_image_size( 'service-card', 600, 400, true );
+	add_image_size( 'blog-card', 640, 427, true );
 	add_image_size( 'client-logo', 160, 56, false );
 
 } );

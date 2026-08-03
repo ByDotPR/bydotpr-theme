@@ -1,0 +1,15 @@
+{
+  "name": "acf/blog-posts",
+  "title": "Últimos blogs",
+  "description": "Últimas 3 entradas del blog + botón 'Ver más' hacia el archivo.",
+  "category": "bydotpr",
+  "icon": "admin-post",
+  "acf": { "mode": "render", "renderTemplate": "block-blog-posts.php" },
+  "supports": {
+    "align": false,
+    "mode": false,
+    "jsx": false,
+    "html": false,
+    "anchor": true
+  }
+}

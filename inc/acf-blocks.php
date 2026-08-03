@@ -22,7 +22,7 @@ add_action( 'init', function () {
 		return; // ACF Pro no está activo, ya se avisó en functions.php
 	}
 
-	$blocks = array( 'hero', 'about', 'clients', 'services', 'why-us', 'social', 'contact-form' );
+	$blocks = array( 'hero', 'about', 'clients', 'services', 'why-us', 'social', 'contact-form', 'blog-posts' );
 
 	foreach ( $blocks as $block ) {
 		$path = BYDOTPR_DIR . "/blocks/{$block}/block.json";
@@ -50,6 +50,7 @@ add_filter( 'allowed_block_types_all', function ( $allowed, $context ) {
 		'acf/why-us',
 		'acf/social',
 		'acf/contact-form',
+		'acf/blog-posts',
 	);
 }, 10, 2 );
 

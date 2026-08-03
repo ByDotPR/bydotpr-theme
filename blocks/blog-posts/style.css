@@ -1,0 +1,104 @@
+.b-blog {
+  max-width: var(--container);
+  margin: 0 auto;
+  padding: var(--space-xl) var(--space-lg);
+}
+
+.b-blog__title {
+  font-family: var(--font-heading);
+  font-weight: 400;
+  font-size: clamp(1.6rem, 2.6vw, 2.2rem);
+  margin: 0 0 var(--space-lg);
+  text-align: center;
+}
+
+.b-blog__grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: var(--space-lg);
+}
+
+.b-blog__card {
+  border: none;
+}
+.b-blog__card-link {
+  display: block;
+  text-decoration: none;
+  color: inherit;
+}
+
+.b-blog__image-wrap {
+  aspect-ratio: 3 / 2;
+  overflow: hidden;
+  margin-bottom: var(--space-sm);
+}
+.b-blog__image {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  transition: transform 0.3s ease;
+}
+.b-blog__card-link:hover .b-blog__image {
+  transform: scale(1.03);
+}
+
+.b-blog__date {
+  font-family: var(--font-sans);
+  font-size: 0.75rem;
+  text-transform: uppercase;
+  letter-spacing: 0.06em;
+  color: var(--color-accent);
+  margin: 0 0 0.4rem;
+}
+.b-blog__card-title {
+  font-family: var(--font-heading);
+  font-weight: 400;
+  font-size: 1.25rem;
+  line-height: 1.3;
+  margin: 0 0 0.5rem;
+  color: var(--color-ink);
+}
+.b-blog__excerpt {
+  font-family: var(--font-sans);
+  font-size: 0.85rem;
+  line-height: 1.6;
+  color: var(--color-muted);
+  margin: 0;
+}
+
+.b-blog__cta-row {
+  display: flex;
+  justify-content: center;
+  margin-top: var(--space-xl);
+}
+.b-blog__cta {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  height: 44px;
+  padding: 0 1.75rem;
+  border: 1.5px solid var(--color-ink);
+  border-radius: 999px;
+  color: var(--color-ink);
+  text-decoration: none;
+  font-family: var(--font-sans);
+  font-size: 0.9rem;
+  transition:
+    background 0.15s ease,
+    color 0.15s ease;
+}
+.b-blog__cta:hover {
+  background: var(--color-ink);
+  color: var(--color-bg);
+}
+
+@media (max-width: 900px) {
+  .b-blog__grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+@media (max-width: 640px) {
+  .b-blog__grid {
+    grid-template-columns: 1fr;
+  }
+}
