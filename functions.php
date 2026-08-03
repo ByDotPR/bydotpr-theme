@@ -25,4 +25,5 @@ require BYDOTPR_DIR . '/inc/assets.php';      // enqueue de CSS/JS
 require BYDOTPR_DIR . '/inc/helpers.php';     // funciones compartidas (íconos RRSS, etc.)
 require BYDOTPR_DIR . '/inc/options-pages.php'; // ACF Options Page: Header / Footer
 require BYDOTPR_DIR . '/inc/plugin-management.php'; // control de plugins al activar el theme
+require BYDOTPR_DIR . '/inc/updates.php'; // chequeo de actualizaciones vía GitHub
 require BYDOTPR_DIR . '/inc/acf-blocks.php';  // registro de bloques ACF
