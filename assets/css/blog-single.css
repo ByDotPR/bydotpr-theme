@@ -101,10 +101,6 @@
 
 /* Drop cap editorial — igual filosofía visual que la watermark del About,
    pero funcional (letra capital real de lectura), sin JS. */
-.blog-single__content > p:first-of-type {
-  overflow: hidden;
-}
-
 .blog-single__content > p:first-of-type::first-letter {
   font-family: var(--font-heading);
   font-size: 4.5rem;
