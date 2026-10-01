@@ -9,10 +9,13 @@
 <?php wp_body_open(); ?>
 
 <header class="site-header container">
-	<a class="site-header__logo" href="<?php echo esc_url( home_url( '/' ) ); ?>">
+	<?php
+	$logo_image  = get_field( 'header_logo_image', 'option' );
+	$logo_text   = get_field( 'header_logo_text', 'option' ) ?: 'DOT';
+	$logo_height = absint( get_field( 'header_logo_height', 'option' ) ) ?: 40;
+	?>
+	<a class="site-header__logo" href="<?php echo esc_url( home_url( '/' ) ); ?>" style="--logo-h: <?php echo esc_attr( $logo_height ); ?>px">
 		<?php
-		$logo_image = get_field( 'header_logo_image', 'option' );
-		$logo_text  = get_field( 'header_logo_text', 'option' ) ?: 'DOT';
 
 		if ( $logo_image ) :
 			?>

@@ -1,8 +1,11 @@
 <footer class="site-footer container">
-		<a class="site-footer__logo" href="<?php echo esc_url( home_url( '/' ) ); ?>">
+		<?php
+		$f_logo_image  = get_field( 'footer_logo_image', 'option' );
+		$f_logo_text   = get_field( 'footer_logo_text', 'option' ) ?: 'DOT';
+		$f_logo_height = absint( get_field( 'footer_logo_height', 'option' ) ) ?: 30;
+		?>
+		<a class="site-footer__logo" href="<?php echo esc_url( home_url( '/' ) ); ?>" style="--logo-h: <?php echo esc_attr( $f_logo_height ); ?>px">
 			<?php
-			$f_logo_image = get_field( 'footer_logo_image', 'option' );
-			$f_logo_text  = get_field( 'footer_logo_text', 'option' ) ?: 'DOT';
 
 			if ( $f_logo_image ) :
 				?>
