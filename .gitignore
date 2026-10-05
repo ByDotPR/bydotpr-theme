@@ -1,3 +1,7 @@
 .DS_Store
 *.log
 node_modules/
+
+# Fuentes originales (solo se publican los .woff2)
+*.ttf
+*.otf

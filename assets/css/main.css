@@ -1,33 +1,27 @@
 /* Última actualización: 03 ago 2026 - prueba de flujo de auto-updates */
 /* ---- Fuentes self-hosted ----
-   PP Editorial New: fuente comercial (Pangram Pangram) usada en headlines/hero.
-   Helvetica Neue LT Std: usada en body/UI.
-   Reemplaza los .woff2 en /assets/fonts/ por los archivos con licencia web reales
-   (convertidos desde los .otf con fonttools — ver README para el comando). */
+   Futura Std Extra Bold: títulos (h1–h3, logo, headlines de bloques).
+   Futura Std Book: texto secundario (body/UI).
+   Coloca los .woff2 con licencia web en /assets/fonts/ con estos nombres exactos
+   (convertidos desde los .otf con fonttools — ver README para el comando).
+   La familia de títulos declara el rango 100–900 para que cualquier font-weight
+   pedido use siempre el corte Extra Bold sin negrita sintética. */
 @font-face {
-  font-family: "PP Editorial New";
-  src: url("../fonts/PPEditorialNew-Regular.woff2") format("woff2");
-  font-weight: 400;
+  font-family: "Futura Heading";
+  src:
+    url("../fonts/FuturaStd-ExtraBold.woff2") format("woff2"),
+    local("Futura Std Extra Bold"),
+    local("FuturaStd-ExtraBold");
+  font-weight: 100 900;
   font-style: normal;
   font-display: swap;
 }
 @font-face {
-  font-family: "PP Editorial New";
-  src: url("../fonts/PPEditorialNew-Italic.woff2") format("woff2");
-  font-weight: 400;
-  font-style: italic;
-  font-display: swap;
-}
-@font-face {
-  font-family: "PP Editorial New";
-  src: url("../fonts/PPEditorialNew-UltralightItalic.woff2") format("woff2");
-  font-weight: 200;
-  font-style: italic;
-  font-display: swap;
-}
-@font-face {
-  font-family: "Helvetica Neue LT Std";
-  src: url("../fonts/HelveticaNeueLTStd-Roman.woff2") format("woff2");
+  font-family: "Futura Book";
+  src:
+    url("../fonts/FuturaStd-Book.woff2") format("woff2"),
+    local("Futura Std Book"),
+    local("FuturaStd-Book");
   font-weight: 400;
   font-style: normal;
   font-display: swap;
@@ -50,10 +44,10 @@
   --space-lg: 2rem;
   --space-xl: 4rem;
 
-  --font-heading: "PP Editorial New", Georgia, serif;
+  --font-heading: "Futura Heading", "Futura", "Century Gothic", sans-serif;
   --font-sans:
-    "Helvetica Neue LT Std", -apple-system, BlinkMacSystemFont, "Segoe UI",
-    sans-serif;
+    "Futura Book", "Futura", "Century Gothic", -apple-system,
+    BlinkMacSystemFont, "Segoe UI", sans-serif;
 }
 
 /* ---- Reset mínimo ---- */

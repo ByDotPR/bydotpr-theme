@@ -15,7 +15,7 @@ Classic theme + bloques ACF Pro, optimizado para velocidad de carga (sin FSE, si
 5. Configurar los menús "Menú principal" y "Menú de footer" en Apariencia > Menús.
 
 ## Pendientes antes de producción
-- [ ] Reemplazar `assets/fonts/inter-var.woff2` por la tipografía real del PSD (self-hosted).
+- [ ] Agregar `assets/fonts/FuturaStd-ExtraBold.woff2` (títulos) y `assets/fonts/FuturaStd-Book.woff2` (secundaria) con licencia web. Conversión desde .otf: `pip install fonttools brotli` y `fonttools ttLib.woff2 compress FuturaStd-Book.otf`.
 - [ ] Cargar los 14 logos de clientes, las imágenes/íconos de los 6 servicios y los bullets de "por qué nosotros" vía ACF.
 - [ ] Confirmar campos finales del formulario de contacto (¿empresa sí/no?, ¿teléfono obligatorio?).
 - [ ] Configurar el email destino del formulario en el campo ACF "Email destino" del bloque.
