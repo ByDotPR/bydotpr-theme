@@ -71,7 +71,7 @@ add_filter( 'wp_img_tag_add_loading_attr', function ( $value, $image, $context )
  * Self-host de fuentes: preload de la fuente crítica usada en el H1 del hero (Futura Std Extra Bold).
  */
 add_action( 'wp_head', function () {
-	$font = BYDOTPR_URI . '/assets/fonts/FuturaStd-ExtraBold.woff2';
+	$font = BYDOTPR_URI . '/assets/fonts/FuturaStd-Bold.woff2';
 	echo '<link rel="preload" href="' . esc_url( $font ) . '" as="font" type="font/woff2" crossorigin>' . "\n";
 }, 1 );
 

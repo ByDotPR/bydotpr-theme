@@ -4,20 +4,22 @@
  * "public relations agency" comparte fila con "360°" (align-items: flex-end,
  * pegado a la parte baja del número) — NO es una línea separada.
  * El párrafo sí va aparte, debajo, indentado.
+ * El peso del número se elige desde ACF (about_title_weight).
  */
 bydotpr_enqueue_block_asset( 'about' );
 
-$prefix      = get_field( 'about_prefix' );
-$number      = get_field( 'about_number' );
-$tagline     = get_field( 'about_tagline' );
-$text        = get_field( 'about_text' );
-$text_mobile = get_field( 'about_text_mobile' );
+$prefix       = get_field( 'about_prefix' );
+$number       = get_field( 'about_number' );
+$tagline      = get_field( 'about_tagline' );
+$text         = get_field( 'about_text' );
+$text_mobile  = get_field( 'about_text_mobile' );
+$title_weight = bydotpr_title_weight( 'about_title_weight' );
 
 $watermark_letter = $text ? mb_strtoupper( mb_substr( trim( $text ), 0, 1, 'UTF-8' ), 'UTF-8' ) : '';
 
 $anchor_id = ! empty( $block['anchor'] ) ? $block['anchor'] : 'about-us';
 ?>
-<section class="b-about" id="<?php echo esc_attr( $anchor_id ); ?>">
+<section class="b-about" id="<?php echo esc_attr( $anchor_id ); ?>" style="--title-weight: <?php echo esc_attr( $title_weight ); ?>;">
 
 	<?php if ( $watermark_letter ) : ?>
 		<span class="b-about__watermark" aria-hidden="true"><?php echo esc_html( $watermark_letter ); ?></span>

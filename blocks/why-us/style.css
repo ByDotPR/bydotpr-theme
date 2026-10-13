@@ -19,7 +19,7 @@
 /* Título centrado, tamaño controlado por inline style desde ACF */
 .b-why__title {
   font-family: var(--font-heading);
-  font-weight: 400;
+  font-weight: var(--heading-weight);
   margin: 0 0 var(--space-md);
   display: flex;
   align-items: center;
@@ -121,4 +121,9 @@
     top: var(--accent-top-m);
     left: var(--accent-left-m);
   }
+}
+
+/* Peso editable del titulo (ACF: why_us_title_weight) */
+.b-why .b-why__title {
+  font-weight: var(--title-weight, 700);
 }

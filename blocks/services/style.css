@@ -7,7 +7,7 @@
 }
 .b-services__title {
   font-family: var(--font-heading);
-  font-weight: 400;
+  font-weight: var(--heading-weight);
   font-size: clamp(1.6rem, 2.6vw, 2.2rem);
   margin: 0;
 }

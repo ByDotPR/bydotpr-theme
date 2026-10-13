@@ -120,3 +120,8 @@
     display: block;
   }
 }
+
+/* Peso editable del numero (ACF: about_title_weight) */
+.b-about .b-about__number {
+  font-weight: var(--title-weight, 700);
+}

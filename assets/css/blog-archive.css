@@ -4,7 +4,7 @@
 }
 .blog-archive__title {
   font-family: var(--font-heading);
-  font-weight: 400;
+  font-weight: var(--heading-weight);
   font-size: clamp(2.5rem, 5vw, 4rem);
   margin: 0 0 var(--space-md);
 }
@@ -78,7 +78,7 @@
 }
 .blog-featured__title {
   font-family: var(--font-heading);
-  font-weight: 400;
+  font-weight: var(--heading-weight);
   font-size: clamp(1.8rem, 3.4vw, 2.6rem);
   line-height: 1.15;
   margin: 0 0 0.75rem;

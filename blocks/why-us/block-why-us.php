@@ -7,11 +7,13 @@
  * - El adorno de puntos es una IMAGEN subible (why_accent_image), no CSS
  * - Línea arriba y línea abajo, ancho fijo 90% centrado, altura ajustable
  * - N columnas de texto (repeater, sin límite)
+ * - El peso del título se elige desde ACF (why_us_title_weight)
  */
 bydotpr_enqueue_block_asset( 'why-us' );
 
 $title         = get_field( 'why_title' );
 $title_size    = get_field( 'why_title_size' ) ?: 3;
+$title_weight  = bydotpr_title_weight( 'why_us_title_weight' );
 $bg_image      = get_field( 'why_bg_image' );
 $bg_opacity    = get_field( 'why_bg_opacity' );
 $bg_opacity    = ( $bg_opacity === '' || $bg_opacity === null ) ? 15 : $bg_opacity;
@@ -34,7 +36,7 @@ $line_top_h    = get_field( 'why_line_top_height' ) ?: 2;
 $line_bottom_h = get_field( 'why_line_bottom_height' ) ?: 2;
 $columns       = get_field( 'why_columns' );
 ?>
-<section class="b-why">
+<section class="b-why" style="--title-weight: <?php echo esc_attr( $title_weight ); ?>;">
 
 	<div class="b-why__line b-why__line--top" style="height:<?php echo esc_attr( $line_top_h ); ?>px;"></div>
 

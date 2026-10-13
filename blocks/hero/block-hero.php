@@ -4,19 +4,27 @@
  * Full-bleed: imagen de fondo (LCP candidate -> eager + fetchpriority high) con
  * overlay oscuro para legibilidad. Headline en 3 líneas independientes.
  * Subtítulo y CTA van en la misma fila, alineados (párrafo izquierda, botón derecha).
+ * Pesos editables desde ACF: hero_title_weight y hero_accent_weight.
  */
 bydotpr_enqueue_block_asset( 'hero' );
 
-$line1    = get_field( 'hero_title_line1' );
-$line2    = get_field( 'hero_title_line2' );
-$accent   = get_field( 'hero_title_accent' );
-$subtitle = get_field( 'hero_subtitle' );
-$cta_text = get_field( 'hero_cta_text' );
-$cta_link = get_field( 'hero_cta_link' );
-$image    = get_field( 'hero_image' );
-$video    = get_field( 'hero_video' );
+$line1         = get_field( 'hero_title_line1' );
+$line2         = get_field( 'hero_title_line2' );
+$accent        = get_field( 'hero_title_accent' );
+$subtitle      = get_field( 'hero_subtitle' );
+$cta_text      = get_field( 'hero_cta_text' );
+$cta_link      = get_field( 'hero_cta_link' );
+$image         = get_field( 'hero_image' );
+$video         = get_field( 'hero_video' );
+$title_weight  = bydotpr_title_weight( 'hero_title_weight' );
+$accent_weight = bydotpr_accent_weight( 'hero_accent_weight' );
+
+$weight_style = '--title-weight: ' . $title_weight . ';';
+if ( $accent_weight ) {
+	$weight_style .= ' --accent-weight: ' . $accent_weight . ';';
+}
 ?>
-<section class="b-hero">
+<section class="b-hero" style="<?php echo esc_attr( $weight_style ); ?>">
 
 	<div class="b-hero__bg">
 		<?php if ( $video ) : ?>

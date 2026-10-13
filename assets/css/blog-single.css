@@ -52,7 +52,7 @@
 }
 .blog-single__title {
   font-family: var(--font-heading);
-  font-weight: 400;
+  font-weight: var(--heading-weight);
   font-size: clamp(2rem, 4vw, 3.2rem);
   line-height: 1.15;
   margin: 0;
@@ -79,7 +79,7 @@
 .blog-single__content h2,
 .blog-single__content h3 {
   font-family: var(--font-heading);
-  font-weight: 400;
+  font-weight: var(--heading-weight);
   margin: 2rem 0 1rem;
 }
 .blog-single__content img {
@@ -117,7 +117,7 @@
 }
 .blog-related__title {
   font-family: var(--font-heading);
-  font-weight: 400;
+  font-weight: var(--heading-weight);
   font-size: clamp(1.5rem, 2.4vw, 2rem);
   margin: 0 0 var(--space-lg);
 }

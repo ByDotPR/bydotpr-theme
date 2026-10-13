@@ -8,7 +8,7 @@ if ( ! defined( 'ABSPATH' ) ) {
 	exit;
 }
 
-define( 'BYDOTPR_VERSION', '1.2.5' );
+define( 'BYDOTPR_VERSION', '1.3.0' );
 define( 'BYDOTPR_DIR', get_template_directory() );
 define( 'BYDOTPR_URI', get_template_directory_uri() );
 
@@ -27,3 +27,4 @@ require BYDOTPR_DIR . '/inc/options-pages.php'; // ACF Options Page: Header / Fo
 require BYDOTPR_DIR . '/inc/plugin-management.php'; // control de plugins al activar el theme
 require BYDOTPR_DIR . '/inc/updates.php'; // chequeo de actualizaciones vía GitHub
 require BYDOTPR_DIR . '/inc/acf-blocks.php';  // registro de bloques ACF
+require BYDOTPR_DIR . '/inc/acf-typography.php'; // pesos tipográficos por bloque

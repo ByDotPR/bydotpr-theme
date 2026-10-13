@@ -42,7 +42,7 @@
 
 .b-hero__title {
   font-family: var(--font-heading);
-  font-weight: 400;
+  font-weight: var(--heading-weight);
   text-transform: uppercase;
   margin: 0 0 1.5rem;
   color: #fff;
@@ -122,4 +122,16 @@
     flex-direction: column;
     align-items: flex-start;
   }
+}
+
+/* Peso editable del titulo (ACF: hero_title_weight) */
+.b-hero .b-hero__title,
+.b-hero .b-hero__title * {
+  font-weight: var(--title-weight, 700);
+}
+
+/* Acento: usa su propio peso si se eligio, si no hereda el del titulo */
+.b-hero .b-hero__title .b-hero__title-accent {
+  font-weight: var(--accent-weight, var(--title-weight, 700));
+  font-style: normal;
 }
