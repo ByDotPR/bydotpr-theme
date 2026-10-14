@@ -11,8 +11,7 @@ function bydotpr_title_weights() {
 		'500' => 'Medium (500)',
 		'600' => 'Demi (600)',
 		'700' => 'Bold (700)',
-		'800' => 'Extra Bold (800)',
-		'900' => 'Heavy (900)',
+		'800' => 'Heavy (800)',
 	);
 }
 

@@ -1,60 +1,53 @@
 /* Última actualización: 03 ago 2026 - prueba de flujo de auto-updates */
 /* ---- Fuentes self-hosted ----
-   Futura Std: títulos en 7 pesos (cada peso con su propio archivo, así
-   font-weight 300–900 muestra el corte real y nunca una negrita sintética)
-   y Futura Std Book para el texto. Archivos .woff2 en /assets/fonts/. */
+   Futura PT: títulos en 6 pesos (cada peso con su propio archivo, así
+   font-weight 300–800 muestra el corte real y nunca una negrita sintética)
+   y Futura PT Book para el texto. Archivos .woff2 en /assets/fonts/. */
 @font-face {
   font-family: "Futura Heading";
-  src: url("../fonts/FuturaStd-Light.woff2") format("woff2");
+  src: url("../fonts/FuturaPT-Light.woff2") format("woff2");
   font-weight: 300;
   font-style: normal;
   font-display: swap;
 }
 @font-face {
   font-family: "Futura Heading";
-  src: url("../fonts/FuturaStd-Book.woff2") format("woff2");
+  src: url("../fonts/FuturaPT-Book.woff2") format("woff2");
   font-weight: 400;
   font-style: normal;
   font-display: swap;
 }
 @font-face {
   font-family: "Futura Heading";
-  src: url("../fonts/FuturaStd-Medium.woff2") format("woff2");
+  src: url("../fonts/FuturaPT-Medium.woff2") format("woff2");
   font-weight: 500;
   font-style: normal;
   font-display: swap;
 }
 @font-face {
   font-family: "Futura Heading";
-  src: url("../fonts/FuturaStd-Demi.woff2") format("woff2");
+  src: url("../fonts/FuturaPT-Demi.woff2") format("woff2");
   font-weight: 600;
   font-style: normal;
   font-display: swap;
 }
 @font-face {
   font-family: "Futura Heading";
-  src: url("../fonts/FuturaStd-Bold.woff2") format("woff2");
+  src: url("../fonts/FuturaPT-Bold.woff2") format("woff2");
   font-weight: 700;
   font-style: normal;
   font-display: swap;
 }
 @font-face {
   font-family: "Futura Heading";
-  src: url("../fonts/FuturaStd-ExtraBold.woff2") format("woff2");
+  src: url("../fonts/FuturaPT-Heavy.woff2") format("woff2");
   font-weight: 800;
   font-style: normal;
   font-display: swap;
 }
 @font-face {
-  font-family: "Futura Heading";
-  src: url("../fonts/FuturaStd-Heavy.woff2") format("woff2");
-  font-weight: 900;
-  font-style: normal;
-  font-display: swap;
-}
-@font-face {
   font-family: "Futura Book";
-  src: url("../fonts/FuturaStd-Book.woff2") format("woff2");
+  src: url("../fonts/FuturaPT-Book.woff2") format("woff2");
   font-weight: 400;
   font-style: normal;
   font-display: swap;
