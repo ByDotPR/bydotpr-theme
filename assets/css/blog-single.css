@@ -13,34 +13,14 @@
   transition: width 0.1s linear;
 }
 
+/* Imagen destacada a proporción natural: el arte se ve completo. */
 .blog-single__hero {
-  position: relative;
-  min-height: 420px;
-  display: flex;
-  align-items: flex-end;
-  overflow: hidden;
+  padding-top: var(--space-lg);
 }
 .blog-single__hero-image {
-  position: absolute;
-  inset: 0;
+  display: block;
   width: 100%;
-  height: 100%;
-  object-fit: cover;
-}
-.blog-single__hero-overlay {
-  position: absolute;
-  inset: 0;
-  background: linear-gradient(
-    180deg,
-    rgba(17, 17, 17, 0.1) 0%,
-    rgba(17, 17, 17, 0.7) 100%
-  );
-}
-.blog-single__hero-copy {
-  position: relative;
-  z-index: 1;
-  padding-bottom: var(--space-lg);
-  color: #fff;
+  height: auto;
 }
 .blog-single__date {
   font-family: var(--font-sans);
@@ -60,6 +40,9 @@
 }
 .blog-single__head {
   padding: var(--space-xl) var(--space-lg) var(--space-md);
+}
+.blog-single__head--after-image {
+  padding-top: var(--space-md);
 }
 .blog-single__title--no-image {
   color: var(--color-ink);
@@ -133,9 +116,6 @@
   }
 }
 @media (max-width: 640px) {
-  .blog-single__hero {
-    min-height: 320px;
-  }
   .blog-related__grid {
     grid-template-columns: 1fr;
   }

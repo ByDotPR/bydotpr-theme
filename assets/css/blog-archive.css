@@ -35,7 +35,7 @@
   color: var(--color-bg);
 }
 
-/* Post destacado — full-bleed, tratamiento tipo hero */
+/* Post destacado — imagen a proporción natural, el arte se ve completo */
 .blog-featured {
   margin-bottom: var(--space-xl);
 }
@@ -45,24 +45,12 @@
   color: inherit;
 }
 .blog-featured__media {
-  position: relative;
-  aspect-ratio: 21 / 9;
   overflow: hidden;
 }
 .blog-featured__image {
   width: 100%;
-  height: 100%;
-  object-fit: cover;
+  height: auto;
   display: block;
-}
-.blog-featured__overlay {
-  position: absolute;
-  inset: 0;
-  background: linear-gradient(
-    0deg,
-    rgba(17, 17, 17, 0.55) 0%,
-    rgba(17, 17, 17, 0) 60%
-  );
 }
 .blog-featured__copy {
   padding: var(--space-md) 0;
@@ -133,9 +121,6 @@
 @media (max-width: 900px) {
   .blog-archive__grid {
     grid-template-columns: repeat(2, 1fr);
-  }
-  .blog-featured__media {
-    aspect-ratio: 16 / 9;
   }
 }
 @media (max-width: 640px) {

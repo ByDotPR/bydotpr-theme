@@ -7,15 +7,15 @@
   color: inherit;
 }
 
+/* Proporción natural de la imagen: el arte se ve completo, sin recortes. */
 .blog-card__image-wrap {
-  aspect-ratio: 3 / 2;
   overflow: hidden;
   margin-bottom: var(--space-sm);
 }
 .blog-card__image {
+  display: block;
   width: 100%;
-  height: 100%;
-  object-fit: cover;
+  height: auto;
   transition: transform 0.3s ease;
 }
 .blog-card__link:hover .blog-card__image {

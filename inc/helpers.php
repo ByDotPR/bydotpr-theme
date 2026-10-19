@@ -58,8 +58,10 @@ function bydotpr_blog_card() {
 		<a class="blog-card__link" href="<?php the_permalink(); ?>">
 			<?php if ( has_post_thumbnail() ) : ?>
 				<div class="blog-card__image-wrap">
-					<?php echo get_the_post_thumbnail( get_the_ID(), 'blog-card', array(
+					<?php // medium_large no recorta: el arte se ve completo. ?>
+					<?php echo get_the_post_thumbnail( get_the_ID(), 'medium_large', array(
 						'class'    => 'blog-card__image',
+						'sizes'    => '(max-width: 640px) 100vw, (max-width: 900px) 50vw, 33vw',
 						'loading'  => 'lazy',
 						'decoding' => 'async',
 					) ); ?>

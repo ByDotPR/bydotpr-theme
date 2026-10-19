@@ -43,13 +43,14 @@ $is_first_page = ! is_paged();
 					<a class="blog-featured__link" href="<?php the_permalink(); ?>">
 						<?php if ( has_post_thumbnail() ) : ?>
 							<div class="blog-featured__media">
-								<?php the_post_thumbnail( 'hero-desktop', array(
+								<?php // full (sin recorte) + srcset: el arte se ve completo. ?>
+								<?php the_post_thumbnail( 'full', array(
 									'class'   => 'blog-featured__image',
+									'sizes'   => '(max-width: 1440px) 100vw, 1440px',
 									'loading' => 'eager',
 									'fetchpriority' => 'high',
 									'decoding' => 'async',
 								) ); ?>
-								<div class="blog-featured__overlay" aria-hidden="true"></div>
 							</div>
 						<?php endif; ?>
 						<div class="blog-featured__copy">

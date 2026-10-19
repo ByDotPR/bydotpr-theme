@@ -2,7 +2,7 @@
 /**
  * Post individual:
  * - Barra de progreso de lectura (vanilla JS, ~15 líneas, ver blog-single.js)
- * - Hero full-bleed con overlay (mismo tratamiento visual que el bloque Hero)
+ * - Imagen destacada completa (sin recorte) con el título debajo
  * - Drop cap editorial en el primer párrafo (CSS ::first-letter, sin JS)
  * - 3 posts relacionados al final, reutilizando bydotpr_blog_card()
  */
@@ -20,29 +20,24 @@ while ( have_posts() ) : the_post();
 	<article <?php post_class( 'blog-single' ); ?>>
 
 		<?php if ( has_post_thumbnail() ) : ?>
-			<div class="blog-single__hero">
-				<?php the_post_thumbnail( 'hero-desktop', array(
+			<?php // Imagen completa (full, sin recorte) y título debajo, para no tapar el arte. ?>
+			<div class="blog-single__hero container">
+				<?php the_post_thumbnail( 'full', array(
 					'class'   => 'blog-single__hero-image',
+					'sizes'   => '(max-width: 1440px) 100vw, 1440px',
 					'loading' => 'eager',
 					'fetchpriority' => 'high',
 					'decoding' => 'async',
 				) ); ?>
-				<div class="blog-single__hero-overlay" aria-hidden="true"></div>
-				<div class="blog-single__hero-copy container">
-					<p class="blog-single__date">
-						<?php echo esc_html( get_the_date() ); ?> · <?php echo esc_html( bydotpr_reading_time() ); ?> min de lectura
-					</p>
-					<h1 class="blog-single__title"><?php the_title(); ?></h1>
-				</div>
 			</div>
-		<?php else : ?>
-			<header class="blog-single__head container">
-				<p class="blog-single__date">
-					<?php echo esc_html( get_the_date() ); ?> · <?php echo esc_html( bydotpr_reading_time() ); ?> min de lectura
-				</p>
-				<h1 class="blog-single__title blog-single__title--no-image"><?php the_title(); ?></h1>
-			</header>
 		<?php endif; ?>
+
+		<header class="blog-single__head container<?php echo has_post_thumbnail() ? ' blog-single__head--after-image' : ''; ?>">
+			<p class="blog-single__date">
+				<?php echo esc_html( get_the_date() ); ?> · <?php echo esc_html( bydotpr_reading_time() ); ?> min de lectura
+			</p>
+			<h1 class="blog-single__title blog-single__title--no-image"><?php the_title(); ?></h1>
+		</header>
 
 		<div class="blog-single__content container">
 			<?php the_content(); ?>
